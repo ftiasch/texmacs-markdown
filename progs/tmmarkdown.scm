@@ -376,7 +376,7 @@ first empty label"
            `(!concat (label ,label) (tag ,tag)))))
      (,(cut func? <> 'ensuremath) . ,cadr)
      (,(cut func? <> '!sub) .
-       ,(lambda (x) (cons "\\_" (md-math* (cdr x)))))
+       ,(lambda (x) (cons "_" (md-math* (cdr x)))))
      (,(cut func? <> 'label) . ,append-latex-tag )
      ; CAREFUL: this needs to happen before append-latex-tag, so it must go after
      (,(cut func? <> '!table) . ,md-fix-math-table))))

@@ -250,8 +250,8 @@
 
 (define (md-equation x)
   (let*  ((s1 (md-math x (md-get 'paragraph-width)))
-          (s2 (string-replace s1 "\\[" "\\\\["))
-          (s3 (string-replace s2 "\\]" "\\\\]"))
+          (s2 (string-replace s1 "\\[" "$$"))
+          (s3 (string-replace s2 "\\]" "$$"))
           (s4 (string-split s3 #\newline))
           (s5 (map escape-md-symbols s4))
           (anchors (string-concatenate (map create-equation-link s5)))
